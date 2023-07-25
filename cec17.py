@@ -4,9 +4,9 @@ import os
 import platform
 
 if platform.system().lower() == 'windows':
-	cec17_object = ctypes.cdll.LoadLibrary(path.abspath(os.path.join(os.path.dirname(__file__), "cec17.dll")))
+	cec17_object = ctypes.cdll.LoadLibrary(os.path.abspath(os.path.join(os.path.dirname(__file__), "cec17.dll")))
 else:
-	cec17_object = ctypes.cdll.LoadLibrary(path.abspath(os.path.join(os.path.dirname(__file__), "cec17.so")))
+	cec17_object = ctypes.cdll.LoadLibrary(os.path.abspath(os.path.join(os.path.dirname(__file__), "cec17.so")))
 
 cec17_fun = cec17_object.cec17_test_func
 def cec17(x, fun_nums):

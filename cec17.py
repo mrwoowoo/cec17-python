@@ -4,7 +4,7 @@ import os
 import platform
 
 if platform.system().lower() == 'windows':
-	cec17_object = ctypes.cdll.LoadLibrary(os.path.join(os.path.dirname(__file__), "cec17.dll"))
+	cec17_object = ctypes.cdll.LoadLibrary(path.abspath(os.path.join(os.path.dirname(__file__), "cec17.dll")))
 else:
 	cec17_object = ctypes.cdll.LoadLibrary(os.path.join(os.path.dirname(__file__), "cec17.so"))
 
